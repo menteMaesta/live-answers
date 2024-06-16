@@ -2,7 +2,7 @@ import { StrictMode } from "react";
 import { render, waitFor } from "@testing-library/react";
 import { createMemoryRouter, RouterProvider } from "react-router-dom";
 import ErrorPage from "components/ErrorPage";
-import { ROUTES, TEST_IDS } from "helpers/constants";
+import { ROUTES, TEST_IDS, STRINGS } from "helpers/constants";
 
 describe("ErrorPage", () => {
   const routes = [
@@ -32,7 +32,7 @@ describe("ErrorPage", () => {
     expect(errorPage).toBeInTheDocument();
     expect(icon).toBeInTheDocument();
     expect(title).toBeInTheDocument();
-    expect(title.textContent).toBe("An error occurred");
+    expect(title.textContent).toBe(STRINGS.ERROR.TITLE);
     expect(message).toBeInTheDocument();
     expect(homeLink).toBeInTheDocument();
   });

@@ -1,6 +1,6 @@
 import { useRouteError, Link } from "react-router-dom";
 import { ErrorType } from "helpers/customTypes";
-import { ROUTES, TEST_IDS } from "helpers/constants";
+import { ROUTES, TEST_IDS, STRINGS } from "helpers/constants";
 
 export default function ErrorPage() {
   const error = useRouteError() as ErrorType;
@@ -40,7 +40,7 @@ export default function ErrorPage() {
         className="text-3xl dark:text-gray-100"
         data-testid={TEST_IDS.ERROR.TITLE}
       >
-        An error occurred
+        {STRINGS.ERROR.TITLE}
       </h1>
       <p
         className="text-base dark:text-gray-300"
@@ -61,7 +61,7 @@ export default function ErrorPage() {
         }
         data-testid={TEST_IDS.ERROR.BACK_BUTTON}
       >
-        Go back
+        {STRINGS.ERROR.BACK}
       </Link>
     </div>
   );

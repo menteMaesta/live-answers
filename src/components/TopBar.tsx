@@ -1,5 +1,5 @@
 import { Link, useMatch } from "react-router-dom";
-import { ROUTES, TEST_IDS } from "helpers/constants";
+import { ROUTES, TEST_IDS, STRINGS } from "helpers/constants";
 import BackButton from "components/BackButton";
 
 export default function Dashboard() {
@@ -28,7 +28,7 @@ export default function Dashboard() {
               "fa-solid fa-message " + "text-lg text-zinc-950 " + "ml-3"
             }
           />
-          <p className="font-medium text-zinc-950">All Answers</p>
+          <p className="font-medium text-zinc-950">{STRINGS.ALL_ANSWERS}</p>
         </Link>
       )}
       {!isDashboard && <BackButton data-testid={TEST_IDS.BACK_BUTTON} />}

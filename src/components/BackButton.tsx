@@ -1,5 +1,6 @@
 import { ButtonHTMLAttributes } from "react";
 import { useNavigate } from "react-router-dom";
+import { STRINGS } from "helpers/constants";
 
 export default function BackButton({
   className,
@@ -25,7 +26,7 @@ export default function BackButton({
           "ml-3 dark:text-slate-300 "
         }
       />
-      <p>Volver</p>
+      <p>{STRINGS.BACK}</p>
     </button>
   );
 }

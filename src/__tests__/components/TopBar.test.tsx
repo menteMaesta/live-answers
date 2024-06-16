@@ -5,7 +5,7 @@ import {
   createMemoryRouter,
   RouterProvider,
 } from "react-router-dom";
-import { ROUTES, TEST_IDS } from "helpers/constants";
+import { ROUTES, TEST_IDS, STRINGS } from "helpers/constants";
 import Dashboard from "routes/Dashboard/Dashboard";
 import TopBar from "components/TopBar";
 
@@ -96,7 +96,7 @@ describe("TopBar", () => {
 
     expect(backButton).not.toBeInTheDocument();
     expect(allAnswersLink).toBeInTheDocument();
-    expect(allAnswersLink).toHaveTextContent("All Answers");
+    expect(allAnswersLink).toHaveTextContent(STRINGS.ALL_ANSWERS);
     expect(allAnswersLink).toHaveAttribute("href", ROUTES.ANSWERS);
   });
 });

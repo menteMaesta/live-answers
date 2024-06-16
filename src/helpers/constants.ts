@@ -15,3 +15,16 @@ export const TEST_IDS = {
     MESSAGE: "error-message",
   },
 };
+
+export const STRINGS = {
+  ERROR: {
+    TITLE: "An error occurred",
+    BACK: "Go back",
+  },
+  ALL_ANSWERS: "All Answers",
+  BACK: "back",
+  USER_ANSWERS: {
+    ANSWER: "Answer",
+    TYPE_ANSWER: "Type your answer here...",
+  },
+};
