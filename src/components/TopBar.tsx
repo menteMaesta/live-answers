@@ -1,5 +1,5 @@
 import { Link, useMatch } from "react-router-dom";
-import { ROUTES } from "helpers/constants";
+import { ROUTES, TEST_IDS } from "helpers/constants";
 import BackButton from "components/BackButton";
 
 export default function Dashboard() {
@@ -14,9 +14,14 @@ export default function Dashboard() {
         "dark:bg-slate-900 " +
         "dark:shadow-slate-950"
       }
+      data-testid={TEST_IDS.TOP_BAR}
     >
       {isDashboard && (
-        <Link to={ROUTES.DASHBOARD} className={"flex items-center space-x-1"}>
+        <Link
+          to={ROUTES.ANSWERS}
+          className={"flex items-center space-x-1"}
+          data-testid={TEST_IDS.ALL_ANSWERS_LINK}
+        >
           <i
             className={
               "fa-solid fa-message " +
@@ -29,7 +34,7 @@ export default function Dashboard() {
           </p>
         </Link>
       )}
-      {!isDashboard && <BackButton />}
+      {!isDashboard && <BackButton data-testid={TEST_IDS.BACK_BUTTON} />}
     </div>
   );
 }
