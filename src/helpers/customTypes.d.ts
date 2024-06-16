@@ -4,3 +4,8 @@ export type ErrorType = {
   data?: string;
   error?: { message: string; stack: string };
 };
+
+export type QuestionType = {
+  id: number;
+  title: string;
+};

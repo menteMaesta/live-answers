@@ -8,7 +8,7 @@ export default function Dashboard() {
         "w-screen h-screen " +
         "bg-slate-50 overflow-x-hidden " +
         "flex flex-col " +
-        "items-center pb-4 " +
+        "items-center " +
         "dark:bg-zinc-700"
       }
     >

@@ -4,6 +4,8 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import { ROUTES } from "helpers/constants";
 import ErrorPage from "components/ErrorPage";
 import Dashboard from "routes/Dashboard/Dashboard";
+import UserAnswer from "routes/UserAnswer/UserAnswer";
+import { getQuestion } from "routes/UserAnswer/loader";
 import "tailwindcss/tailwind.css";
 
 const router = createBrowserRouter([
@@ -11,7 +13,13 @@ const router = createBrowserRouter([
     path: ROUTES.DASHBOARD,
     element: <Dashboard />,
     errorElement: <ErrorPage />,
-    children: [],
+    children: [
+      {
+        index: true,
+        element: <UserAnswer />,
+        loader: getQuestion,
+      },
+    ],
   },
 ]);
 
