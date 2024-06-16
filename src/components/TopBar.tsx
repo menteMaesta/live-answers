@@ -11,8 +11,9 @@ export default function Dashboard() {
         "shadow shadow-slate-100 bg-white " +
         "flex items-center space-x-2 " +
         "absolute top-0 z-10 " +
-        "dark:bg-zinc-600 " +
-        "dark:shadow-zinc-800"
+        "dark:shadow-zinc-800 " +
+        "bg-gradient-to-r from-amber-300 to-lime-300 " +
+        "dark:from-amber-600 dark:to-lime-600 "
       }
       data-testid={TEST_IDS.TOP_BAR}
     >
@@ -24,14 +25,10 @@ export default function Dashboard() {
         >
           <i
             className={
-              "fa-solid fa-message " +
-              "text-lg text-slate-700 " +
-              "ml-3 dark:text-zinc-300 "
+              "fa-solid fa-message " + "text-lg text-zinc-950 " + "ml-3"
             }
           />
-          <p className="font-medium text-slate-700 dark:text-slate-200">
-            All Answers
-          </p>
+          <p className="font-medium text-zinc-950">All Answers</p>
         </Link>
       )}
       {!isDashboard && <BackButton data-testid={TEST_IDS.BACK_BUTTON} />}

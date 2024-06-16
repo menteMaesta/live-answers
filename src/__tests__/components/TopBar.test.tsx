@@ -25,8 +25,10 @@ describe("TopBar", () => {
       "shadow shadow-slate-100",
       "bg-white flex items-center",
       "space-x-2 absolute",
-      "top-0 z-10 dark:bg-zinc-600",
-      "dark:shadow-zinc-800"
+      "top-0 z-10",
+      "dark:shadow-zinc-800",
+      "bg-gradient-to-r from-amber-300 to-lime-300",
+      "dark:from-amber-600 dark:to-lime-600"
     );
   });
 
