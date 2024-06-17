@@ -12,8 +12,7 @@ export default function BackButton({
       className={
         "flex items-center " +
         "space-x-1 font-medium " +
-        "text-slate-700 " +
-        "dark:text-slate-200 " +
+        "text-zinc-950 " +
         className
       }
       onClick={() => navigate(-1)}
@@ -21,9 +20,7 @@ export default function BackButton({
     >
       <i
         className={
-          "fa-solid fa-chevron-left " +
-          "text-lg text-slate-700 " +
-          "ml-3 dark:text-slate-300 "
+          "fa-solid fa-chevron-left " + "text-lg text-zinc-950 " + "ml-3 "
         }
       />
       <p>{STRINGS.BACK}</p>
