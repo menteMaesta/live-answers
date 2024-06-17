@@ -2,33 +2,40 @@
 
 React frontend for coding challenge with PickFu
 
-# React + TypeScript + Vite
+A small full-stack application that shows a question and allows the user to submit answers for that question.
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Installation
 
-Currently, two official plugins are available:
+1. Clone the repository: `git clone git@github.com:menteMaesta/live-answers.git
+2. Navigate to the project directory: `cd live-answers`
+3. Install dependencies `npm ci`
+4. Start the project: `npm start dev`
+5. To run unit tests: `npm test`
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Usage
 
-## Expanding the ESLint configuration
+This project is the frontend of [live-answer-api](https://github.com/menteMaesta/live-answer-api) so you need to follow the instructions of live-answer-api's README as well.
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+## Configuration
 
-- Configure the top-level `parserOptions` property like this:
+Create an `.env.local` file with the backend URL
 
-```js
-export default {
-  // other rules...
-  parserOptions: {
-    ecmaVersion: "latest",
-    sourceType: "module",
-    project: ["./tsconfig.json", "./tsconfig.node.json"],
-    tsconfigRootDir: __dirname,
-  },
-};
+```
+VITE_BACKEND_URL=http://localhost:3333/api
+VITE_BASE_BACKEND_URL=http://localhost:3333
 ```
 
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+## License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+
+## Credits
+
+- Thanks to React for their great framework.
+- Thanks to DigitalOcean for hosting the website.
+- Thanks to Copilot for all its help, always straight to the point.
+- Thanks to Jake Levirne's blog for [the tutorial on how to deploy my static site to digital ocean](https://jakelevirne.com/2020/12/04/deploying-a-vuepress-site-to-digitalocean-app-platform/)
+
+## Contact
+
+For support or inquiries, contact us at [paulagomenr@gmail.com](mailto:paulagomenr@gmail.com).
