@@ -14,6 +14,11 @@ export const TEST_IDS = {
     TITLE: "error-title",
     MESSAGE: "error-message",
   },
+  TEXTAREA: {
+    CONTAINER: "textarea-container",
+    TEXTAREA: "textarea",
+    ERROR_MESSAGE: "error-message",
+  },
 };
 
 export const STRINGS = {
