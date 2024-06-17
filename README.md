@@ -3,6 +3,8 @@
 React frontend for coding challenge with PickFu
 
 A small full-stack application that shows a question and allows the user to submit answers for that question.
+![live-answer](https://github.com/menteMaesta/live-answers/assets/156379180/4231fe79-a0cd-47e4-8d62-4f15a041ab69)
+
 
 ## Installation
 
