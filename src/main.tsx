@@ -1,11 +1,13 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import SnackbarProvider from "react-simple-snackbar";
 import { ROUTES } from "helpers/constants";
 import ErrorPage from "components/ErrorPage";
 import Dashboard from "routes/Dashboard/Dashboard";
 import UserAnswer from "routes/UserAnswer/UserAnswer";
 import { getQuestion } from "routes/UserAnswer/loader";
+import { answerActions } from "routes/UserAnswer/actions";
 import "tailwindcss/tailwind.css";
 
 const router = createBrowserRouter([
@@ -18,6 +20,7 @@ const router = createBrowserRouter([
         index: true,
         element: <UserAnswer />,
         loader: getQuestion,
+        action: answerActions,
       },
     ],
   },
@@ -25,6 +28,8 @@ const router = createBrowserRouter([
 
 ReactDOM.createRoot(document.getElementById("root")!).render(
   <React.StrictMode>
-    <RouterProvider router={router} />
+    <SnackbarProvider>
+      <RouterProvider router={router} />
+    </SnackbarProvider>
   </React.StrictMode>
 );

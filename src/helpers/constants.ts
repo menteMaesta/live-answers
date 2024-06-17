@@ -26,5 +26,23 @@ export const STRINGS = {
   USER_ANSWERS: {
     ANSWER: "Answer",
     TYPE_ANSWER: "Type your answer here...",
+    EMPTY_ANSWER: "Please type an answer before submitting",
+    NOT_ALLOWED_ANSWER:
+      "Please avoid answers containing _, and offer additional explanation instead",
+    SUCCESS: "Answer submitted successfully!",
   },
+};
+
+export const NOT_ALLOWED_ANSWERS = [
+  "yes",
+  "i don't know",
+  "i dont know",
+  "no",
+  "that's fine",
+  "thats fine",
+];
+
+export const EMPTY_ANSWER = {
+  message: "",
+  questionId: "",
 };

@@ -6,6 +6,16 @@ export type ErrorType = {
 };
 
 export type QuestionType = {
-  id: number;
+  id: string;
   title: string;
 };
+
+export interface AnswerBase {
+  questionId: string;
+  message: string;
+}
+export interface AnswerType extends AnswerBase {
+  id: string;
+  createdAt: string;
+  updatedAt: string;
+}
