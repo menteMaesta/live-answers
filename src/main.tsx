@@ -15,12 +15,13 @@ const router = createBrowserRouter([
     path: ROUTES.DASHBOARD,
     element: <Dashboard />,
     errorElement: <ErrorPage />,
+    loader: getQuestion,
     children: [
       {
         index: true,
         element: <UserAnswer />,
-        loader: getQuestion,
         action: answerActions,
+        loader: getQuestion,
       },
     ],
   },

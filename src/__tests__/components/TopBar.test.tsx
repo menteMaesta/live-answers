@@ -1,23 +1,30 @@
 import { StrictMode } from "react";
 import { render, waitFor } from "@testing-library/react";
-import {
-  MemoryRouter,
-  createMemoryRouter,
-  RouterProvider,
-} from "react-router-dom";
-import { ROUTES, TEST_IDS, STRINGS } from "helpers/constants";
+import { createMemoryRouter, RouterProvider } from "react-router-dom";
+import { ROUTES, TEST_IDS, STRINGS, QUESTION_STUB } from "helpers/constants";
 import Dashboard from "routes/Dashboard/Dashboard";
 import TopBar from "components/TopBar";
 
 describe("TopBar", () => {
-  test("renders topbar", () => {
+  test("renders topbar", async () => {
+    const routes = [
+      {
+        path: "/",
+        element: <TopBar />,
+        loader: () => QUESTION_STUB,
+      },
+    ];
+    const router = createMemoryRouter(routes, {
+      initialEntries: ["/"],
+    });
+
     const { getByTestId } = render(
-      <MemoryRouter>
-        <TopBar />
-      </MemoryRouter>
+      <StrictMode>
+        <RouterProvider router={router} />
+      </StrictMode>
     );
 
-    const topBar = getByTestId(TEST_IDS.TOP_BAR);
+    const topBar = await waitFor(() => getByTestId(TEST_IDS.TOP_BAR));
 
     expect(topBar).toBeInTheDocument();
     expect(topBar).toHaveClass(
@@ -37,6 +44,7 @@ describe("TopBar", () => {
       {
         path: "/",
         element: <Dashboard />,
+        loader: () => QUESTION_STUB,
         children: [
           {
             index: true,
@@ -69,6 +77,7 @@ describe("TopBar", () => {
       {
         path: "/",
         element: <Dashboard />,
+        loader: () => QUESTION_STUB,
         children: [
           {
             index: true,
@@ -97,6 +106,9 @@ describe("TopBar", () => {
     expect(backButton).not.toBeInTheDocument();
     expect(allAnswersLink).toBeInTheDocument();
     expect(allAnswersLink).toHaveTextContent(STRINGS.ALL_ANSWERS);
-    expect(allAnswersLink).toHaveAttribute("href", ROUTES.ANSWERS);
+    expect(allAnswersLink).toHaveAttribute(
+      "href",
+      ROUTES.ANSWERS.replace(":questionId", QUESTION_STUB.id)
+    );
   });
 });

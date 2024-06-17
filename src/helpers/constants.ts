@@ -1,6 +1,6 @@
 export const ROUTES = {
   DASHBOARD: "/",
-  ANSWERS: "/answers",
+  ANSWERS: "/:questionId/answers",
 };
 
 export const TEST_IDS = {
