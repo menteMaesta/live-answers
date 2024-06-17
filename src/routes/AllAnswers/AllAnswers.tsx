@@ -1,8 +1,9 @@
 import { useLoaderData } from "react-router-dom";
-import moment from "moment";
 import { AnswerType } from "helpers/customTypes";
+import { TEST_IDS } from "helpers/constants";
+import AnswerCard from "components/AnswerCard";
 
-export default function UserAnswer() {
+export default function AllAnswers() {
   const allAnswers = useLoaderData() as AnswerType[];
   return (
     <div
@@ -12,29 +13,10 @@ export default function UserAnswer() {
         "sm:grid-cols-2 " +
         "items-stretch"
       }
+      data-testid={TEST_IDS.ANSWER_LIST}
     >
       {allAnswers.map((answer) => (
-        <div
-          className={
-            "bg-white p-4 rounded " +
-            "min-h-40 " +
-            "drop-shadow relative " +
-            "dark:bg-zinc-800 dark:text-zinc-50 " +
-            "pb-8"
-          }
-          key={answer.id}
-        >
-          <p>{answer.message}</p>
-          <p
-            className={
-              "absolute bottom-2 right-2 " +
-              "text-sm text-zinc-400 " +
-              "font-medium"
-            }
-          >
-            {moment(answer.created_at).format("LLL")}
-          </p>
-        </div>
+        <AnswerCard answer={answer} key={answer.id} />
       ))}
     </div>
   );

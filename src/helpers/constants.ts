@@ -1,3 +1,5 @@
+import { AnswerType } from "helpers/customTypes";
+
 export const ROUTES = {
   DASHBOARD: "/",
   ANSWERS: "/:questionId/answers",
@@ -24,6 +26,11 @@ export const TEST_IDS = {
     TITLE: "user-answers-title",
     BUTTON: "user-answers-button",
   },
+  ANSWER_CARD: {
+    CARD: "answer-card",
+    DATE: "answer-date",
+  },
+  ANSWER_LIST: "answer-list",
 };
 
 export const STRINGS = {
@@ -63,3 +70,10 @@ export const QUESTION_STUB = {
   createdAt: "2024-06-13T03:23:24.726+00:00",
   updatedAt: "2024-06-13T03:23:24.726+00:00",
 };
+
+export const ANSWER_STUB = {
+  id: "1",
+  questionId: QUESTION_STUB.id,
+  message: "This is the answer",
+  created_at: "2022-01-01T12:00:00Z",
+} as AnswerType;
