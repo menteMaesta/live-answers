@@ -19,6 +19,11 @@ export const TEST_IDS = {
     TEXTAREA: "textarea",
     ERROR_MESSAGE: "error-message",
   },
+  USER_ANSWERS: {
+    PAGE: "user-answers-page",
+    TITLE: "user-answers-title",
+    BUTTON: "user-answers-button",
+  },
 };
 
 export const STRINGS = {
@@ -50,4 +55,11 @@ export const NOT_ALLOWED_ANSWERS = [
 export const EMPTY_ANSWER = {
   message: "",
   questionId: "",
+};
+
+export const QUESTION_STUB = {
+  id: "680d6c4e-96b0-4468-9e93-71049d5b406a",
+  title: "Is a hot dog a sandwich? Why?",
+  createdAt: "2024-06-13T03:23:24.726+00:00",
+  updatedAt: "2024-06-13T03:23:24.726+00:00",
 };

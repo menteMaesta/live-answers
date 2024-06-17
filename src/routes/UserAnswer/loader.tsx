@@ -1,4 +1,5 @@
 import { fetchQuestion } from "routes/UserAnswer/api";
+import { QuestionType } from "helpers/customTypes";
 
 export const getQuestion = async () => {
   const { status, data } = await fetchQuestion();
@@ -7,5 +8,5 @@ export const getQuestion = async () => {
     throw data.errors[0];
   }
 
-  return data;
+  return data as QuestionType;
 };

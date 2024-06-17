@@ -3,7 +3,12 @@ import { useLoaderData, useSubmit, useActionData } from "react-router-dom";
 import classnames from "classnames";
 import { useSnackbar } from "react-simple-snackbar";
 import { QuestionType, AnswerBase, ErrorType } from "helpers/customTypes";
-import { STRINGS, NOT_ALLOWED_ANSWERS, EMPTY_ANSWER } from "helpers/constants";
+import {
+  STRINGS,
+  NOT_ALLOWED_ANSWERS,
+  EMPTY_ANSWER,
+  TEST_IDS,
+} from "helpers/constants";
 import TextArea from "components/TextArea";
 import Button from "components/Button";
 
@@ -60,6 +65,7 @@ export default function UserAnswer() {
     <form
       className="mt-11 w-full h-full p-4 flex items-center flex-col"
       onSubmit={onSubmit}
+      data-testid={TEST_IDS.USER_ANSWERS.PAGE}
     >
       <p
         className={
@@ -68,6 +74,7 @@ export default function UserAnswer() {
           "font-medium my-4 " +
           "dark:text-zinc-50 dark:font-semibold"
         }
+        data-testid={TEST_IDS.USER_ANSWERS.TITLE}
       >
         {question.title}
       </p>
@@ -87,6 +94,7 @@ export default function UserAnswer() {
         className={"px-4 py-1 " + "mt-4 font-medium "}
         type="submit"
         children={STRINGS.USER_ANSWERS.ANSWER}
+        data-testid={TEST_IDS.USER_ANSWERS.BUTTON}
       />
     </form>
   );
