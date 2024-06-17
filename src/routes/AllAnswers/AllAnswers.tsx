@@ -1,10 +1,29 @@
+import { useState, useEffect } from "react";
 import { useLoaderData } from "react-router-dom";
 import { AnswerType } from "helpers/customTypes";
 import { TEST_IDS } from "helpers/constants";
+import { transmit } from "helpers/transmitHelper";
 import AnswerCard from "components/AnswerCard";
 
 export default function AllAnswers() {
   const allAnswers = useLoaderData() as AnswerType[];
+  const [answers, setAnswers] = useState<AnswerType[]>(allAnswers);
+
+  useEffect(() => {
+    let unsubscribe;
+    const subscription = transmit.subscription("newAnswer");
+
+    subscription.create();
+    unsubscribe = subscription.onMessage((newAnswer: AnswerType) => {
+      setAnswers((prevAnswers) => [newAnswer, ...prevAnswers]);
+    });
+
+    return () => {
+      unsubscribe();
+      subscription.delete();
+    };
+  }, []);
+
   return (
     <div
       className={
@@ -15,7 +34,7 @@ export default function AllAnswers() {
       }
       data-testid={TEST_IDS.ANSWER_LIST}
     >
-      {allAnswers.map((answer) => (
+      {answers.map((answer) => (
         <AnswerCard answer={answer} key={answer.id} />
       ))}
     </div>
