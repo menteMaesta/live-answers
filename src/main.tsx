@@ -8,6 +8,8 @@ import Dashboard from "routes/Dashboard/Dashboard";
 import UserAnswer from "routes/UserAnswer/UserAnswer";
 import { getQuestion } from "routes/UserAnswer/loader";
 import { answerActions } from "routes/UserAnswer/actions";
+import AllAnswers from "routes/AllAnswers/AllAnswers";
+import { getAllAnswers } from "routes/AllAnswers/loader";
 import "tailwindcss/tailwind.css";
 
 const router = createBrowserRouter([
@@ -22,6 +24,11 @@ const router = createBrowserRouter([
         element: <UserAnswer />,
         action: answerActions,
         loader: getQuestion,
+      },
+      {
+        path: ROUTES.ANSWERS,
+        element: <AllAnswers />,
+        loader: getAllAnswers,
       },
     ],
   },

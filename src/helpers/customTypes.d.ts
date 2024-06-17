@@ -16,6 +16,6 @@ export interface AnswerBase {
 }
 export interface AnswerType extends AnswerBase {
   id: string;
-  createdAt: string;
-  updatedAt: string;
+  created_at: string;
+  updated_at: string;
 }
