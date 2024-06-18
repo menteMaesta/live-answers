@@ -14,8 +14,7 @@ export default function AllAnswers() {
     const subscription = transmit.subscription("newAnswer");
 
     subscription.create();
-    unsubscribe = subscription.onMessage((data: string) => {
-      const newAnswer = JSON.parse(data.replace("data: ", ""));
+    unsubscribe = subscription.onMessage((newAnswer: AnswerType) => {
       setAnswers((prevAnswers) => [newAnswer, ...prevAnswers]);
     });
 
