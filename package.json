@@ -6,6 +6,7 @@
   "scripts": {
     "dev": "vite",
     "build": "tsc && vite build",
+    "postbuild": "scp -i ~/.ssh/id_github -r ~/Developer/live-answers/dist/*  live-answers@198.199.67.42:/var/www/mentemaesta/html",
     "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
     "preview": "vite preview",
     "test": "vitest",
